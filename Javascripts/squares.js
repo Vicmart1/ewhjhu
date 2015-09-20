@@ -9,7 +9,17 @@ var descriptions = ["We are the Johns Hopkins chapter of the Engineering World H
 var des_loc = new Array(rows);
 var loc_des = new Array(descriptions.length);
 
+function clicked(id) {
+	$(".head-links").each(function(index) {
+		$(this).removeClass("active-link");
+	});
+	$("#" + id).addClass("active-link");
+	
+}
+
 $( document ).ready(function() {
+	$("#home").addClass("active-link");
+	
 	for(i = 0; i < rows; i++) {
 		des_loc[i] = new Array(columns);
 	}

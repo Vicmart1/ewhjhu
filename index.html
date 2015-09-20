@@ -8,6 +8,11 @@
 		    	src: url(Stylesheets/Raleway-Medium.ttf);
 			}
 			
+			@font-face {
+		    	font-family: Raleway;
+		    	src: url(Stylesheets/Raleway-Light.ttf);
+			}
+			
 		    html, body{
 				margin: 0px;
 				padding: 0px;
@@ -46,7 +51,7 @@
 			}
 			
 			p{
-				font-family: Raleway-Med;
+				font-family: Raleway;
 				-webkit-touch-callout: none;
 			    -webkit-user-select: none;
 			    -khtml-user-select: none;
@@ -77,7 +82,7 @@
 				transition: all 0.25s ease 0.25s;
 				-webkit-transform: translate3d(0, 0, 0);
 				color: white;
-				font-family: Raleway-Med;
+				font-family: Raleway;
 				overflow: scroll;
 			}
 			
@@ -97,7 +102,7 @@
 				background-color: white;
 				border-bottom: 1px solid black;
 				z-index: 5;
-				font-family: Raleway-Med;
+				font-family: Raleway;
 				font-size: 1.5em;
 				padding: 5px;
 				padding-top: 0px;
@@ -117,11 +122,35 @@
 			.footer{
 				position: fixed;
 				width: 100%;
-				font-family: Raleway-Med;
+				font-family: Raleway;
 				left: 0px;
 				top: calc(100% - 1em - 10px);
-				font-size: 1.2em;
+				font-size: 1.0em;
 				margin: 5px;
+			}
+			
+			.head-links{
+				color: black;
+				font-family: Raleway;
+				text-decoration: none;
+				padding-left: 5px;
+				padding-right: 5px;
+				transition: all 0.35s ease;
+			}
+			
+			.head-links:hover{
+				background-color: rgba(51, 204, 255, 0.5);
+				color: white;
+			}
+			
+			.head-links:active{
+				background-color: #3CF;
+				color: white;
+			}
+			
+			.active-link{
+				background-color: #3CF;
+				color: white;
 			}
 		</style>
 	</head>
@@ -132,7 +161,7 @@
 				<span class="ewh" style='color: #33CCFF'>EngineeringWorldHealth</span>|JohnsHopkinsUniversity
 			</p>
 			<p class="header right-para">
-				<a href="EWH-DT-App-2015.docx">Apply to a Design Team</a>
+				<a class="head-links" href="#" id="home" onClick="clicked('home')">Home</a><a class="head-links" onClick="clicked('dt')" href="#" id="dt" >Design Teams</a><a class="head-links"  onClick="clicked('gen')" href="#" id="gen">General Body</a><a class="head-links" onClick="clicked('app')" style="margin-right: -5px" href="#" id="app">Apply</a>
 			</p>
 		</div>
 		<div class="footer">
