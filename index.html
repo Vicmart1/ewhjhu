@@ -50,6 +50,8 @@
 			.active{
 				background-color: #33CCFF;
 				z-index: 2;
+                cursor: pointer;
+                cursor: hand;
 			}
 			
 			.deactive{
@@ -103,10 +105,18 @@
 			
 			.paragraph{
 				position: absolute;
-				margin: 5px;
+				margin: 5px 10px;
 				opacity: 0;
 				transition: all 0.05s ease 0.5s;
 			}
+            
+            .paragraph-list {
+                margin: 0px;
+                margin-left: -0.75em;
+                margin-top: -0.5em;
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
 			
 			.notifbar{
 				position: fixed;
@@ -176,10 +186,10 @@
 				<span class="ewh" style='color: #33CCFF'>EngineeringWorldHealth</span>|JohnsHopkinsUniversity
 			</p>
 			<p class="header right-para">
-				<a class="head-links" style="margin-right: -5px" href="EWH-GB-App-2015.docx" id="app">Apply (GB)</a>
+                Apply to <a href="https://goo.gl/forms/zWKNeIhnaUrGjt0G3">Design Team</a>|<a href="https://goo.gl/forms/3WKQdX8iSsiFLWyu1">Incubator</a>
 			</p>
 		</div>
-		<div class="footer">
+		<div class="footer" style="z-index: 10;">
 			<i>Email us at <a href="mailto:jhuewh@gmail.com">jhuewh@gmail.com</a></br>Created by <a href="https://github.com/Vicmart1">Victor Dadfar</a>, Webmaster</i>
 		</div>
 	</body>

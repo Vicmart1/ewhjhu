@@ -11,6 +11,7 @@ $(document).ready(function() {
 	$(".globe-cont").css("height", Math.min(height, width) + "px");
 });
 
+
 $(document).mousedown(function(event) {
 	clearInterval(intervalHandle);
 	mouse_x = event.pageX;

@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <style>
+            @font-face {
+		    	font-family: Raleway;
+		    	src: url(../Stylesheets/Raleway-Light.ttf);
+			}
+            
+            @font-face {
+		    	font-family: Raleway-Med;
+		    	src: url(../Stylesheets/Raleway-Medium.ttf);
+			}
+            
+            html, body{
+				margin: 0em 0em;
+				padding: 0px;
+                font-family: Raleway-Med;
+                font-size: 2em;
+			}
+            
+            h1 {
+                font-family: Raleway-Med;
+                margin: 0.9em 0.125em;
+                margin-bottom: 0em;
+                color: #3CF;
+            }
+            
+            h5 {
+                font-family: Raleway-Med;
+                margin: 0em 0.425em;   
+                margin-bottom: 2.75em;
+                color: #666;
+            }
+            
+            .square {
+                background-color: green;
+                color: white;
+                padding: 0.25em;
+                margin: 0.125em 0.125em;
+                border-radius: 0.05em;
+                position: relative;
+                width: calc(50% - 0.75em);
+                height: 0;
+                padding-bottom: calc(50% - 0.75em);
+                float: left;
+                
+                font-size: 1.1em;
+            }
+            
+            .empty {
+                background-color: gainsboro;
+                margin-top: -6.5em;
+                z-index: -1000;
+                width: calc(100% - 0.75em);
+            }
+            
+            .circle {
+                background-color: #3CF;
+                border-radius: 100%;
+                display: inline-block;
+                width: calc(25%);
+                padding-bottom: calc(25%);
+                margin: calc(12.5% - 0.25em) calc(12.5% - 0.25em);
+                font-size: 0.75em;
+            }
+            
+            .text {
+                position: relative;
+                top: calc(50% - 1.5em);
+                text-align: center;
+            }
+            
+            .credits {
+                text-align: center;
+                font-size: 0.5em;
+                color: gray;
+                padding-left: 0.15em;
+                padding-right: 0.15em;
+                margin-bottom: 1em;
+            }
+            
+            .popup {
+                position: fixed;
+                top: 100%;
+                height: 100%;
+                background-color: green;
+                width: 95%;
+                padding: 0.5em;
+                color: white;
+                font-size: 0.85em;
+                overflow: scroll;
+                
+                -webkit-transition: all 0.5s;
+                -m-transition: all 0.5s;
+                -moz-transition: all 0.5s;
+                -o-transition: all 0.5s;
+                transition: all 0.5s;
+            }
+            
+            li {
+                margin: 1em 1em;
+            }
+            
+            hr {
+                padding: 0;
+                margin: 0;
+                margin-bottom: 0.5em;
+                height: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>EWH</h1>
+        <h5>Engineering World Health</h5>
+        <div class='square empty'></div>
+        <div class='square'>About Us</div>
+        <div class='square'>Smartphone Based Labor Monitor</div>
+        <div class='square'>Oxygen Concen-tration Analyzer</div>
+        <div class='square'>Otoacoustic Emission Device</div>
+        <div class='square'>Water Purification</div>
+        <div class='square'>Low-Cost Endoscope</div>
+        <div class='square circle'><div class='text'>Apply to DT</div></div>
+        <div class='square circle'><div class='text'>Apply to Incubator</div></div>
+        <div class="credits">
+            Email us at <a href="mailto:jhuewh@gmail.com">jhuewh@gmail.com</a></br>
+            Created in 67 minutes by Victor Dadfar, Webmaster
+        </div>
+        <div class="popup">PLACEHOLDER TEXT</div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            var descriptions = ["We are: <ul><li>Passionate</li><li>Dedicated to helping improve the world</li><li>FUN</li></ul>Our <b>Design Teams</b> create solutions to big problems in developing countries. The <b>General Body</b> is responsible for planning and executing all of EWH's programs.</br></br>On this site you will find the general body's mission and current design teams' plans. All Johns Hopkins undergraduate students are eligible to apply to General Body and Design Teams.", 
+                    "<ul><li>Complications during labor can be detected by examining the pattern between maternal uterine contractions and fetal heart rate.</li><li>Monitoring these parameters currently requires skilled personnel to utilize expensive and bulky machines.</li><li>We designed a low-cost, easy-to-use device to ensure that labor is progressing smoothly.</li></ul>", 
+                    "<ul><li>Oxygen therapy is essential in the treatment of a variety of illnesses.</li><li>Current analyzers are too expensive for use in developing countries</li><li>We designed an oxygen analyzer to ensure that optimal levels of oxygen are reaching premature infant incubators</li></ul>", 
+                    "<ul><li>Early detection of hearing loss in newborns is critical for language and cognitive development</li><li>There is no required hearing screening in developing countries due to complex, expensive equipment and lack of access to quiet rooms</li><li>Our Otoaucostic Emission Device uses a novel bone conduction technique to identify hearing impairment.</li></ul>", 
+                    "<ul><li>Water purification remains a sizable issue in a number of developing world nations. Over 700 million people worldwide lack access to clean water.</li><li>We have built two full size prototypes with numerous physical, chemical and biological layers that will effectively purify dirty water.</li><li>Our team has also acquired a sizable grant to produce additional, more efficient prototypes in the near future as well as devices used to test the purity of the water.</li></ul>", 
+                    "<ul><li>A nasal endoscope will provide necessary diagnostic technologies to developing countries</li></ul>"];
+            
+            $(".square").click(function() {
+                if (!$(this).hasClass("circle")) {
+                    $(".popup").css("top", "0px"); 
+                    var index = $(".square").index($(this));
+                    var title = $(this).text().replace("-", "");
+                    $(".popup").html(title + "<hr />" + descriptions[index - 1] + "</br>");
+                }
+            });
+            
+            $(".circle").click(function() {
+                if ($(".circle").index($(this)) == 0) {
+                    var win = window.open('https://goo.gl/forms/VmUegStppikMFJLA3', '_blank');
+                } else if ($(".circle").index($(this)) == 1) {
+                    var win = window.open('https://goo.gl/forms/icYP2wv57Jzw9gVG2', '_blank');
+                }
+            });
+            
+            $(".popup").click(function() {
+                $(".popup").css("top", "100%"); 
+            });
+        </script>
+    </body>
+</html>
